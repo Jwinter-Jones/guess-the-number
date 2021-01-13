@@ -5,8 +5,10 @@
       let num = Math.floor(Math.random() * 11);
       let guess = prompt("guess a number between 1 and 10");
       let gotIt = false;
+      let numGuesses = 0;
 
-      while (gotIt === false) {
+      while (gotIt === false){
+        numGuesses++;
         if(num == guess){
         gotIt = true; // break out of loop
         }
@@ -15,7 +17,7 @@
         }
       }
 
-      alert("Got it!");
+      alert("Got it! You guessed " + numGuesses + " times!");
       //alert("Sorry!  You guessed " + guess + " and the number was " + num);
 
     </script>
