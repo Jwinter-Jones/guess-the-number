@@ -13,7 +13,11 @@
         gotIt = true; // break out of loop
         }
         else{//continue, since answer is incorect!
-          guess = prompt("guess again!");
+          if (num > guess) {//higher!
+            guess = prompt("higher");
+          } else {//lower!
+            guess = prompt("lower");
+          }
         }
       }
 
