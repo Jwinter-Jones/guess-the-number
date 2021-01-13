@@ -2,7 +2,21 @@
   <body>
     <h1>Guess the Number!</h1>
     <script>
-      alert("I'm an alert");
+      let num = Math.floor(Math.random() * 11);
+      let guess = prompt("guess a number between 1 and 10");
+      let gotIt = false;
+
+      while (gotIt === false) {
+        if(num == guess){
+        gotIt = true; // break out of loop
+        }
+        else{//continue, since answer is incorect!
+          guess = prompt("guess again!");
+        }
+      }
+
+      alert("Got it!");
+      //alert("Sorry!  You guessed " + guess + " and the number was " + num);
 
     </script>
   </body>
