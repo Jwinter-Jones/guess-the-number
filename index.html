@@ -1,28 +1,32 @@
 <html>
-  <body>
+  <body id="body">
     <h1>Guess the Number!</h1>
+    <button onclick="guess();">Click here instead of reloading!</button>
     <script>
-      let num = Math.floor(Math.random() * 11);
-      let guess = prompt("guess a number between 1 and 10");
-      let gotIt = false;
-      let numGuesses = 0;
+      document.getElementById("body").onload = guess();
+      function guess(){
+          let num = Math.floor(Math.random() * 11);
+          let guess = prompt("guess a number between 1 and 10");
+          let gotIt = false;
+          let numGuesses = 0;
 
-      while (gotIt === false){
-        numGuesses++;
-        if(num == guess){
-        gotIt = true; // break out of loop
-        }
-        else{//continue, since answer is incorect!
-          if (num > guess) {//higher!
-            guess = prompt("higher");
-          } else {//lower!
-            guess = prompt("lower");
+          while (gotIt === false){
+            numGuesses++;
+            if(num == guess){
+            gotIt = true; // break out of loop
+            }
+            else{//continue, since answer is incorect!
+              if (num > guess) {//higher!
+                guess = prompt("higher");
+              } else {//lower!
+                guess = prompt("lower");
+              }
+            }
           }
-        }
-      }
 
-      alert("Got it! You guessed the number " + guess + " correctly after " + numGuesses + " guesses!");
-      //alert("Sorry!  You guessed " + guess + " and the number was " + num);
+          alert("Got it! You guessed the number " + guess + " correctly after " + numGuesses + " guesses!");
+          //alert("Sorry!  You guessed " + guess + " and the number was " + num);
+      }
 
     </script>
   </body>
