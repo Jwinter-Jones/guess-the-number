@@ -5,8 +5,8 @@
     <script>
       document.getElementById("body").onload = guess();
       function guess(){
-          let num = Math.floor(Math.random() * 11);
-          let guess = prompt("guess a number between 1 and 10");
+          let num = Math.floor(Math.random() * 99 + 1);
+          let guess = prompt("guess a number between 1 and 100");
           let gotIt = false;
           let numGuesses = 0;
 
@@ -16,16 +16,23 @@
             gotIt = true; // break out of loop
             }
             else{//continue, since answer is incorect!
-              if (num > guess) {//higher!
+              if (guess == null) {//Stop
+                break;
+              }else if(num > guess) {//higher!
                 guess = prompt("higher");
-              } else {//lower!
+              } 
+              else {//lower!
                 guess = prompt("lower");
               }
             }
           }
-
-          alert("Got it! You guessed the number " + guess + " correctly after " + numGuesses + " guesses!");
+          if (guess == null) {
+            alert("Alright, gosh! Bye!")
+          } else {
+            alert("Got it! You guessed the number " + guess + " correctly after " + numGuesses + " guesses!");
           //alert("Sorry!  You guessed " + guess + " and the number was " + num);
+          }
+         
       }
 
     </script>
